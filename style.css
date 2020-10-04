@@ -1,0 +1,91 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Public Sans", sans-serif;
+  font-size: 16px;
+  background-color: var(--light-grayish-blue);
+  color: var(--dark-blue);
+}
+:root {
+  --dark-blue: hsl(233, 26%, 24%);
+  --lime-green: hsl(136, 65%, 51%);
+  --bright-cyan: hsl(192, 70%, 51%);
+  --grayish-blue: hsl(233, 8%, 62%);
+  --light-grayish-blue: hsl(220, 16%, 96%);
+  --white: hsl(0, 0%, 100%);
+  --red: hsl(355, 46%, 45%);
+  --green: hsl(137, 57%, 59%);
+}
+.title {
+  margin-top: 20px auto;
+  text-align: center;
+  font-size: 34px;
+  color: var(--dark-blue);
+  text-shadow: 4px 4px 4px var(--grayish-blue);
+  letter-spacing: 6px;
+  font-weight: 900;
+}
+.rules {
+  color: var(--dark-blue);
+  margin: 0 auto;
+  width: 800px;
+  margin-top: 80px;
+}
+
+.navi {
+  margin: 40px auto;
+  width: 800px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navi > button {
+  width: 150px;
+  height: 50px;
+  border-radius: 25px;
+  font-size: 24px;
+  color: var(--dark-blue);
+  background: linear-gradient(
+    to right,
+    var(--lime-green) 0%,
+    var(--bright-cyan) 100%
+  );
+  border: 1px solid var(--dark-blue);
+}
+
+.navi__timer {
+  font-weight: 400;
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+}
+.progress {
+  width: 200px;
+  height: 10px;
+  background: linear-gradient(
+    to right,
+    var(--bright-cyan) 0%,
+    var(--lime-green) 100%
+  );
+  border-radius: 5px;
+  border: 1px solid var(--dark-blue);
+}
+.excercise {
+  display: block;
+  width: 800px;
+  margin: 30px auto;
+  font-size: 24px;
+  border: 2px solid var(--dark-blue);
+  background-color: white;
+  border-radius: 25px;
+}
+.example {
+  height: 150px;
+}
+
+.record {
+  height: 50px;
+  text-align: center;
+}
