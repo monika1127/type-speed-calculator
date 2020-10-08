@@ -8,37 +8,38 @@
 
   <body>
     <h1 class="title">Typing Speed Test</h1>
-    <div class = "rules">
-        <h2 class="rules__title">How to play?</h2>
-        <p class="rules__rules">
-            How fast are your fingers? Do the one-minute typing test to find out!
-            Press the space bar after each word. At the end, you'll get your typing
-            speed in CPM and WPM. Good luck!
-        </p>
-    </div>
     <!-- navigation -->
     <div class="navi">
-      <button>START</button>
+      <button class="upload__button">RESTART</button>
       <div>
-      <div class="navi__timer">
-        <p>TIME LEFT</p>
-        <p>60sec.</p>
-      </div>
+        <div class="navi__timer">
+          <p>TIME LEFT</p>
+          <p>60sec.</p>
+        </div>
         <div class="progress">
-            <div class="progress__bar"></div>
+          <div class="progress__bar"></div>
         </div>
       </div>
     </div>
     <!-- inputs generate text -->
     <div class="excercise example"></div>
-    <input type="text" class="excercise record" placeholder="type your text here"/>
+    <input
+      type="text"
+      class="excercise record"
+      placeholder="type your text here"
+    />
 
     <!-- results info -->
+    <div class="rules">
+      <h2 class="rules__title">How to play?</h2>
+      <p class="rules__rules">
+        How fast are your fingers? Do the one-minute typing test to find out!
+        Press the space bar after each word. At the end, you'll get your typing
+        speed in CPM and WPM. Good luck!
+      </p>
+    </div>
     <div class="result"></div>
-
+    <script src="words.js"></script>
     <script src="script.js"></script>
-</body>
-
-
   </body>
 </html>

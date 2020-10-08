@@ -20,7 +20,7 @@ body {
 .title {
   margin-top: 20px auto;
   text-align: center;
-  font-size: 34px;
+  font-size: 44px;
   color: var(--dark-blue);
   text-shadow: 4px 4px 4px var(--grayish-blue);
   letter-spacing: 6px;
@@ -74,17 +74,40 @@ body {
 }
 .excercise {
   display: block;
+  padding: 10px 20px;
   width: 800px;
   margin: 30px auto;
   font-size: 24px;
   border: 2px solid var(--dark-blue);
   background-color: white;
   border-radius: 25px;
+  overflow: hidden;
+  line-height: 2;
+  word-spacing: 4px;
 }
 .example {
-  height: 150px;
+  height: 170px;
+}
+.example__word {
+  padding: 4px 10px;
+  border-radius: 15px;
+}
+.active {
+  background-color: var(--bright-cyan);
+}
+.fail {
+  color: var(--red);
+}
+.pass {
+  color: var(--lime-green);
+}
+.correct {
+  color: var(--light-grayish-blue);
 }
 
+.incorrect {
+  color: var(--red);
+}
 .record {
   height: 50px;
   text-align: center;
