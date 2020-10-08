@@ -14,7 +14,7 @@
       <div>
         <div class="navi__timer">
           <p>TIME LEFT</p>
-          <p>60sec.</p>
+          <p id="time__left">60sec.</p>
         </div>
         <div class="progress">
           <div class="progress__bar"></div>
@@ -38,7 +38,12 @@
         speed in CPM and WPM. Good luck!
       </p>
     </div>
-    <div class="result"></div>
+    <div class="result">
+      <div class="result__title">Your results</div>
+      <div class="result__cathegory" id="cpn">cpm</div>
+      <div class="result__cathegory" id="wpn">wpm</div>
+      <button class="result__close_button">EXIT</button>
+    </div>
     <script src="words.js"></script>
     <script src="script.js"></script>
   </body>
