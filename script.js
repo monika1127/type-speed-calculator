@@ -9,9 +9,12 @@ const exampleInput = document.querySelector('.example')
 
 const closeButton =document.querySelector('.result__close_button')
 const results = document.querySelector(".result")
-const timeLeft = document.querySelector("#time__left")
 const cpmValue = document.querySelector("#cpm")
 const wpmValue = document.querySelector("#wpm")
+
+//timer
+const timeLeft = document.querySelector("#time__left")
+const bar = document.querySelector(".progress__bar")
 
 // variable foe word correctness
 let activeId
@@ -47,17 +50,19 @@ function wordlistUpload(){
 
 
 // gametime countdown
-function countdown(gameTime){
+function countdown(){
     const now = Date.now()
     const then = now + gameTime*1000
 
-    const counter = setInterval((gameTime)=> {
+    const counter = setInterval(()=> {
         const secondsLeft = Math.round((then - Date.now())/1000);
-        if(secondsLeft<0){
+        const progress = Math.round((secondsLeft/gameTime*100));
+         if(secondsLeft<0){
             clearInterval(counter)
             return
         }
-        timeLeft.innerHTML=secondsLeft;
+        timeLeft.innerHTML=secondsLeft + ' sec';
+        bar.style.width = progress + '%'
     },1000);
     setTimeout(resultsLoad, gameTime*1000)
 }
@@ -74,7 +79,7 @@ function resultsLoad(){
 function spellingCheck(e){
 
     //countdown start
-    if(pressCounter === true){countdown(gameTime)}
+    if(pressCounter === true){countdown()}
     pressCounter = false;
 
     // variables - array from recorded word and excercice word
@@ -124,6 +129,7 @@ function resultClose(){
     pressCounter = true
     recordInput.value=""
     timeLeft.innerHTML=gameTime+' sec';
+    bar.style.width = '100%'
     cpm = 0
     wpm = 0
     wordlistUpload()

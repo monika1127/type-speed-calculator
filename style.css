@@ -52,6 +52,10 @@ button {
   );
   border: 1px solid var(--dark-blue);
 }
+button:focus {
+  outline: none;
+  border: 3px solid var(--dark-blue);
+}
 
 .navi__timer {
   font-weight: 400;
@@ -62,14 +66,19 @@ button {
 .progress {
   width: 200px;
   height: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--dark-blue);
+}
+.progress__bar {
   background: linear-gradient(
     to right,
     var(--bright-cyan) 0%,
     var(--lime-green) 100%
   );
-  border-radius: 5px;
-  border: 1px solid var(--dark-blue);
+  width: 100%;
+  height: 100%;
 }
+
 .excercise {
   display: block;
   padding: 10px 20px;
@@ -83,6 +92,11 @@ button {
   line-height: 2;
   word-spacing: 4px;
 }
+.record:focus {
+  outline: none;
+  border: 3px solid var(--dark-blue);
+}
+
 .example {
   height: 170px;
 }
