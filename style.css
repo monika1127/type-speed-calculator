@@ -91,15 +91,18 @@ button:focus {
   overflow: hidden;
   line-height: 2;
   word-spacing: 4px;
+  height: 170px;
 }
+
+.exapmle {
+  transition: translateY 0.5s ease;
+}
+
 .record:focus {
   outline: none;
   border: 3px solid var(--dark-blue);
 }
 
-.example {
-  height: 170px;
-}
 .example__word {
   padding: 4px 10px;
   border-radius: 15px;
