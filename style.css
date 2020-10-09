@@ -18,7 +18,6 @@ body {
   --green: hsl(137, 57%, 59%);
 }
 .title {
-  margin-top: 20px auto;
   text-align: center;
   font-size: 44px;
   color: var(--dark-blue);
@@ -30,7 +29,6 @@ body {
   color: var(--dark-blue);
   margin: 0 auto;
   width: 800px;
-  margin-top: 80px;
 }
 
 .navi {
@@ -92,6 +90,8 @@ button {
   padding: 4px 10px;
   border-radius: 15px;
 }
+
+/* word and letter styling - correctness assessment */
 .active {
   background-color: var(--bright-cyan);
 }
@@ -113,6 +113,8 @@ button {
   text-align: center;
 }
 
+/* results window */
+
 .result {
   width: 700px;
   height: 400px;
@@ -132,19 +134,31 @@ button {
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  font-size: 44px;
-  color: var(--dark-blue);
-  text-shadow: 4px 4px 4px var(--grayish-blue);
-  letter-spacing: 6px;
-  font-weight: 900;
   visibility: hidden;
 }
 
 .visible {
   visibility: visible;
 }
+
 .result__cathegory {
   font-size: 24px;
+  color: var(--dark-blue);
+  font-weight: 900;
+}
+
+.result__cathegory-details {
+  display: block;
+  color: var(--grayish-blue);
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.result__title {
+  font-size: 44px;
+  text-shadow: 4px 4px 4px var(--grayish-blue);
+  letter-spacing: 6px;
+  font-weight: 900;
 }
 
 .result__close_button {
