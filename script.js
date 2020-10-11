@@ -92,10 +92,6 @@ function spellingCheck(e){
         // - remove 'acitve' class from previous word
         activeWord.classList.remove('active')
 
-        if(activeWord.offsetTop > exampleInput.offsetTop + 70){
-            exampleInput.style.transform = 'translateY(-50px)';
-               }
-
         // - add 'correct'/ 'fail' class to previous word
         const status = excerciseWord.map((el, i)=> el===recordedWord[i]? 0 : 1 ).reduce((acc, curr)=>acc+curr)
 
@@ -115,6 +111,9 @@ function spellingCheck(e){
         // - add 'active' class to next word
         activeWord = exampleInput.querySelector(`#word${activeId}`)
         activeWord.classList.add('active')
+        if(activeWord.offsetTop > 100) {
+          activeWord.scrollIntoView({ block: 'center', inline: 'center', behavior: 'smooth',})
+        }
         recordInput.value=""
 
     }else{

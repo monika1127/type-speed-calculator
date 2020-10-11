@@ -80,6 +80,7 @@ button:focus {
 }
 
 .excercise {
+  position: relative;
   display: block;
   padding: 10px 20px;
   width: 800px;
