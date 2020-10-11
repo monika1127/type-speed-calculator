@@ -22,7 +22,9 @@ let activeWord
 
 //variable for gametime countdown
 let pressCounter  = true
-const gameTime = 60 //in seconds
+const gameTime = 10 //in seconds, all calculation are to value 60
+let timeoutRef
+let counter
 
 //test score
 let cpm = 0
@@ -40,12 +42,26 @@ function shuffle(array){
 // initial conditions - excercise text load, first word highlited,  variables reset :
 
 function wordlistUpload(){
+    timeLeft.innerHTML=gameTime+' sec';
     shuffle(words)
     const htmlText = words.map((word, i) => `<span class="example__word" id="word${i}">${word}</span>`)
     exampleInput.innerHTML = htmlText.join(' ')
     activeId = 0
     activeWord = exampleInput.querySelector(`#word${activeId}`)
     activeWord.classList.add('active')
+    activeWord.scrollIntoView(false)
+}
+
+function wordlistRefresh(){
+    pressCounter = true
+    recordInput.value=""
+    timeLeft.innerHTML=gameTime+' sec';
+    bar.style.width = '100%'
+    cpm = 0
+    wpm = 0
+    clearTimeout(timeoutRef)
+    clearInterval(counter)
+    wordlistUpload()
 }
 
 
@@ -54,7 +70,7 @@ function countdown(){
     const now = Date.now()
     const then = now + gameTime*1000
 
-    const counter = setInterval(()=> {
+    counter = setInterval(()=> {
         const secondsLeft = Math.round((then - Date.now())/1000);
         const progress = Math.round((secondsLeft/gameTime*100));
          if(secondsLeft<0){
@@ -64,7 +80,8 @@ function countdown(){
         timeLeft.innerHTML=secondsLeft + ' sec';
         bar.style.width = progress + '%'
     },1000);
-    setTimeout(resultsLoad, gameTime*1000)
+
+    timeoutRef = setTimeout(resultsLoad, gameTime*1000)
 }
 
 // function to show results and score data
@@ -137,10 +154,9 @@ function resultClose(){
     cpm = 0
     wpm = 0
     wordlistUpload()
-
 }
 
-startButton.addEventListener('click', wordlistUpload)
+startButton.addEventListener('click', wordlistRefresh)
 window.addEventListener('load', wordlistUpload)
 recordInput.addEventListener('keyup', spellingCheck)
 closeButton.addEventListener('click', resultClose)

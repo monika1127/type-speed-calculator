@@ -92,11 +92,8 @@ button:focus {
   overflow: hidden;
   line-height: 2;
   word-spacing: 4px;
-  height: 170px;
-}
-
-.exapmle {
-  transition: translateY 0.5s ease;
+  height: 160px;
+  text-align: center;
 }
 
 .record:focus {
